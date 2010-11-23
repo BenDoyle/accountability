@@ -1,4 +1,6 @@
 Roundup::Application.routes.draw do
+  resources :stories
+
   resources :people
 
   # The priority is based upon order of creation:
