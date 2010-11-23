@@ -1,0 +1,2 @@
+class PeopleStoriesController < ApplicationController
+end

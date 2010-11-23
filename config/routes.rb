@@ -1,4 +1,6 @@
 Roundup::Application.routes.draw do
+  resources :people_stories
+
   resources :stories
 
   resources :people
