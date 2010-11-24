@@ -5,3 +5,14 @@
 #
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Daley', :city => cities.first)
+
+dalton = Person.create(first_name: "Dalton", last_name: "McGuinty")
+tim    = Person.create(first_name: "Tim",    last_name: "Hudak")
+
+s = Story.new
+s.title   = "Liberals ready to cut Ont. hydro rates"
+s.url     = "http://www.cbc.ca/canada/toronto/story/2010/11/17/ontario-hydro.html"
+s.content = "<CONTENT>"
+s.save
+
+s.people += [tim,dalton]
