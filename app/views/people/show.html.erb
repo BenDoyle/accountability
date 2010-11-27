@@ -1,5 +1,7 @@
 <h1><%= @person.name %></h1>
 
+<h2>Stories</h2>
+
 <table>
   <tr>
     <th>Source</th>
@@ -9,7 +11,7 @@
  
 <% @stories.each do |story| %>
   <tr>
-    <td>coming soon</td>
+    <td><%= link_to story.source.name, story.source %></td>
     <td><%= link_to story.title, story %></td>
     <td><%= link_to 'link', story.url %></td>
   </tr>

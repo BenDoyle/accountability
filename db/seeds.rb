@@ -15,4 +15,11 @@ s.url     = "http://www.cbc.ca/canada/toronto/story/2010/11/17/ontario-hydro.htm
 s.content = "<CONTENT>"
 s.save
 
+so = Source.new
+so.name = 'CBC News'
+so.url  = 'http://www.cbc.ca/news' 
+so.save
+
 s.people += [tim,dalton]
+s.source = so
+s.save

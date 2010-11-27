@@ -1,22 +1,21 @@
-<h1>All Stories</h1>
- 
+<h1><%= link_to @source.name, @source.url %></h1>
+
+<h2>Stories</h2>
+
 <table>
   <tr>
-    <th>Source</th>
     <th>Title</th>
     <th></th>
   </tr>
  
 <% @stories.each do |story| %>
   <tr>
-    <td><%= link_to story.source.name, story.source %></td>
     <td><%= link_to story.title, story %></td>
     <td><%= link_to 'link', story.url %></td>
   </tr>
 <% end %>
 </table>
-
+ 
 <br />
 
 <%= link_to 'Home', :controller => 'home', :action => 'index' %>
-
