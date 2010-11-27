@@ -1,0 +1,17 @@
+<h1>All people</h1>
+ 
+<table>
+  <tr>
+    <th>Name</th>
+  </tr>
+ 
+<% @people.each do |person| %>
+  <tr>
+    <td><%= link_to person.name, person %></td>
+  </tr>
+<% end %>
+</table>
+ 
+<br />
+
+<%= link_to 'Home', :controller => 'home', :action => 'index' %>

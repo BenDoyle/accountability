@@ -1,0 +1,18 @@
+<h1><%= @story.title %></h1> 
+<h2>People</h2> 
+
+<table>
+  <tr>
+    <th>Person</th>
+  </tr>
+ 
+<% @story.people.each do |person| %>
+  <tr>
+    <td><%= link_to person.name, person %></td>
+  </tr>
+<% end %>
+</table>
+ 
+<br />
+
+<%= link_to 'Home', :controller => 'home', :action => 'index' %>
