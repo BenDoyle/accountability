@@ -10,7 +10,7 @@ class Person < ActiveRecord::Base
   def name 
     first_name + ' ' + last_name
   end
-  # def current_party
-  #   memberships.sort_by{|a,b|a. }
-  # end
+  def party_membership_at(time)
+    self.party_memberships.select{|e| time.between?( (e.start_date or time), (e.end_date or time) ) }.first.party
+  end
 end
