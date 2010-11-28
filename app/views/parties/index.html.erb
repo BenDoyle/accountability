@@ -1,0 +1,20 @@
+<h1>All Parties</h1>
+ 
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+  </tr>
+ 
+<% @parties.each do |party| %>
+  <tr>
+    <td><%= link_to party.name, party %></td>
+    <td><%= link_to 'web', party.url %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Home', :controller => 'home', :action => 'index' %>
+

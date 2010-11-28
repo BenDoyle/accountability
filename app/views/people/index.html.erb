@@ -3,11 +3,13 @@
 <table>
   <tr>
     <th>Name</th>
+    <th>Current Party Affiliation</th>
   </tr>
  
 <% @people.each do |person| %>
   <tr>
     <td><%= link_to person.name, person %></td>
+    <td><%= link_to person.party_membership_at(Time.now).name, person.party_membership_at(Time.now) %></td>
   </tr>
 <% end %>
 </table>

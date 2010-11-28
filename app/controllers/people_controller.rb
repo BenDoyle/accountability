@@ -2,8 +2,7 @@ class PeopleController < ApplicationController
   def show
     @person  = Person.find(params[:id])
     @stories = @person.stories
-    @organizations = @person.organizations
-    @regions = @person.regions
+    @parties = @person.parties
     @contests = @person.contests
   end
   def index

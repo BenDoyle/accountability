@@ -1,7 +1,7 @@
 class PartiesController < ApplicationController
   def show
     @party = Party.find(params[:id])
-    @people = @party.people
+    @memberships = @party.party_memberships
   end
   def index
     @parties = Party.all
