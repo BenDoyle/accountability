@@ -1,8 +1,7 @@
 class ContestsController < ApplicationController
   def show
     @contest  = Contest.find(params[:id])
-    @people = @contest.people
-    @regions = @contest.regions
+    @polls = @contest.polls #.sort_by{|a,b|a.votes <=> b.votes}
   end
   def index
     @contests  = Contest.all

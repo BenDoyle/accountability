@@ -1,4 +1,4 @@
-<h1><%= link_to @contest.region.name, @contest.region %>, <%= @contest.contest_date %></h1> 
+<h1><%= link_to @contest.region.name, @contest.region %>, <%= @contest.date %></h1> 
 
 <table>
   <tr>
@@ -7,11 +7,11 @@
     <th>Votes</th>
   </tr>
  
-<% @people do |person| %>
+<% @polls.each do |poll| %>
   <tr>
-    <td><%= link_to person.current_organization.name, person.current_organization %></td>
-    <td><%= link_to person.name, person %></td>
-    <td><%= link_to person.name, person %></td>
+    <td><%= link_to poll.person.party_membership_at(@contest.date).name, poll.person.party_membership_at(@contest.date) %></td>
+    <td><%= link_to poll.person.name, poll.person %></td>
+    <td><%= poll.votes %></td>
   </tr>
 <% end %>
 </table>
