@@ -1,4 +1,4 @@
-Roundup::Application.routes.draw do
+Accountability::Application.routes.draw do
   
   resources :parties
 
