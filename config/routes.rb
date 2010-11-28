@@ -1,5 +1,15 @@
 Roundup::Application.routes.draw do
   
+  resources :roles
+
+  resources :memberships
+
+  resources :organizations
+
+  resources :contests
+
+  resources :regions
+
   resources :sources
 
   resources :home

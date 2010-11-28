@@ -20,6 +20,35 @@ so.name = 'CBC News'
 so.url  = 'http://www.cbc.ca/news' 
 so.save
 
+
+lib = Organization.new
+lib.name = 'Liberal Party of Ontario'
+lib.url  = 'http://www.ontarioliberal.ca/'
+lib.save
+
+con = Organization.new
+con.name = 'Progressive Conservative Party of Ontario'
+con.url = 'http://www.ontariopc.com/'
+con.save
+
+r = Role.new
+r.title = 'leader'
+r.save
+
+l_mem = Membership.new
+l_mem.person = dalton
+l_mem.role = r
+l_mem.organization = lib
+l_mem.save
+
+l_mem = Membership.new
+l_mem.person = tim
+l_mem.role = r
+l_mem.organization = con
+l_mem.save
+
+
 s.people += [tim,dalton]
 s.source = so
 s.save
+

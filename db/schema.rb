@@ -10,7 +10,32 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101127201943) do
+ActiveRecord::Schema.define(:version => 20101128142005) do
+
+  create_table "contests", :force => true do |t|
+    t.integer  "person_id"
+    t.integer  "region_id"
+    t.date     "contest_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "memberships", :force => true do |t|
+    t.integer  "person_id"
+    t.integer  "organization_id"
+    t.integer  "role_id"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "organizations", :force => true do |t|
+    t.string   "name"
+    t.string   "url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "people", :force => true do |t|
     t.string   "first_name"
@@ -22,6 +47,21 @@ ActiveRecord::Schema.define(:version => 20101127201943) do
   create_table "people_stories", :force => true do |t|
     t.integer  "person_id"
     t.integer  "story_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "regions", :force => true do |t|
+    t.string   "name"
+    t.string   "url"
+    t.date     "date_created"
+    t.date     "date_dissolved"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "roles", :force => true do |t|
+    t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
