@@ -6,8 +6,6 @@ Roundup::Application.routes.draw do
 
   resources :roles
 
-  resources :memberships
-
   resources :contests
 
   resources :regions

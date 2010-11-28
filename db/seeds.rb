@@ -75,19 +75,19 @@ p3.person = tim
 p3.votes  = 24_463
 p3.save
 
-l_mem = Membership.new
+l_mem = PartyMembership.new
 l_mem.person = dalton
 l_mem.role = leader
 l_mem.party = lib
 l_mem.save
 
-c_mem = Membership.new
+c_mem = PartyMembership.new
 c_mem.person = tim
 c_mem.role = leader
 c_mem.party = con
 c_mem.save
 
-c_mem2 = Membership.new
+c_mem2 = PartyMembership.new
 c_mem2.person = richard
 c_mem2.role = member
 c_mem2.party = con
