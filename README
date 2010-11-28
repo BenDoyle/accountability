@@ -1,10 +1,12 @@
 NOTES AND TODO
 
-* Add Person <=> Contest <=> Region
-
-* Add Person <=> Member  <=> Organization
+* Write scraper for Ontario Legislative Assembly data
 
 * Add Person <=> Vote    <=> Debate
+
+* Write scraper for Hansard data
+
+* Write scraper for news sources
 
 * Eventually, I'll need moderation.
 There should be a mechanism to look though stories and make claims about them, i.e. story X says candidate Y supports issue Z.
