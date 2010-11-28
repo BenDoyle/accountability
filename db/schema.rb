@@ -10,13 +10,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101128142005) do
+ActiveRecord::Schema.define(:version => 20101128181120) do
 
   create_table "contests", :force => true do |t|
-    t.integer  "person_id"
     t.integer  "region_id"
-    t.date     "contest_date"
-    t.integer  "votes"
+    t.date     "date"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -48,6 +46,14 @@ ActiveRecord::Schema.define(:version => 20101128142005) do
   create_table "people_stories", :force => true do |t|
     t.integer  "person_id"
     t.integer  "story_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "polls", :force => true do |t|
+    t.integer  "person_id"
+    t.integer  "contest_id"
+    t.integer  "votes"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

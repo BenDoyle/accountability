@@ -1,4 +1,5 @@
 class Contest < ActiveRecord::Base
   belongs_to :region
-  belongs_to :person
+  has_many :polls
+  has_many :person
 end

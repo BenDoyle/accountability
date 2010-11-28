@@ -1,5 +1,6 @@
-dalton = Person.create(first_name: "Dalton", last_name: "McGuinty")
-tim    = Person.create(first_name: "Tim",    last_name: "Hudak")
+dalton  = Person.create(first_name: "Dalton", last_name: "McGuinty")
+tim     = Person.create(first_name: "Tim",    last_name: "Hudak")
+richard = Person.create(first_name: "Richard", last_name: "Raymond")
 
 lib = Organization.new
 lib.name = 'Liberal Party of Ontario'
@@ -14,6 +15,10 @@ con.save
 leader = Role.new
 leader.title = 'leader'
 leader.save
+
+member = Role.new
+member.title = 'member'
+member.save
 
 os = Region.new
 os.name = 'Ottawa South'
@@ -42,19 +47,33 @@ s.source = so
 s.people += [tim,dalton]
 s.save
 
-c_dal = Contest.new
-c_dal.contest_date = '2007-10-10'
-c_dal.votes = 32_851
-c_dal.person = dalton
-c_dal.region = os
-c_dal.save
+os_1 = Contest.new
+os_1.date = '2007-10-10'
+os_1.region = os
+os_1.save
 
-c_tim = Contest.new
-c_tim.contest_date = '2007-10-10'
-c_tim.votes = 24_463
-c_tim.person = tim
-c_tim.region = nw
-c_tim.save
+nw_1 = Contest.new
+nw_1.date = '2007-10-10'
+nw_1.region = nw
+nw_1.save
+
+p1 = Poll.new
+p1.contest = os_1
+p1.person = dalton
+p1.votes  = 23_851
+p1.save
+
+p2 = Poll.new
+p2.contest = os_1
+p2.person = richard
+p2.votes  = 14_151
+p2.save
+
+p3 = Poll.new
+p3.contest = nw_1
+p3.person = tim
+p3.votes  = 24_463
+p3.save
 
 l_mem = Membership.new
 l_mem.person = dalton
@@ -62,9 +81,14 @@ l_mem.role = leader
 l_mem.organization = lib
 l_mem.save
 
-l_mem = Membership.new
-l_mem.person = tim
-l_mem.role = leader
-l_mem.organization = con
-l_mem.save
+c_mem = Membership.new
+c_mem.person = tim
+c_mem.role = leader
+c_mem.organization = con
+c_mem.save
 
+c_mem2 = Membership.new
+c_mem2.person = richard
+c_mem2.role = member
+c_mem2.organization = con
+c_mem2.save

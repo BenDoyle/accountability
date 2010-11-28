@@ -1,5 +1,7 @@
 Roundup::Application.routes.draw do
   
+  resources :polls
+
   resources :roles
 
   resources :memberships
