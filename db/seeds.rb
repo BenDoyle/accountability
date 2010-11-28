@@ -2,12 +2,12 @@ dalton  = Person.create(first_name: "Dalton", last_name: "McGuinty")
 tim     = Person.create(first_name: "Tim",    last_name: "Hudak")
 richard = Person.create(first_name: "Richard", last_name: "Raymond")
 
-lib = Organization.new
+lib = Party.new
 lib.name = 'Liberal Party of Ontario'
 lib.url  = 'http://www.ontarioliberal.ca/'
 lib.save
 
-con = Organization.new
+con = Party.new
 con.name = 'Progressive Conservative Party of Ontario'
 con.url = 'http://www.ontariopc.com/'
 con.save
@@ -78,17 +78,17 @@ p3.save
 l_mem = Membership.new
 l_mem.person = dalton
 l_mem.role = leader
-l_mem.organization = lib
+l_mem.party = lib
 l_mem.save
 
 c_mem = Membership.new
 c_mem.person = tim
 c_mem.role = leader
-c_mem.organization = con
+c_mem.party = con
 c_mem.save
 
 c_mem2 = Membership.new
 c_mem2.person = richard
 c_mem2.role = member
-c_mem2.organization = con
+c_mem2.party = con
 c_mem2.save

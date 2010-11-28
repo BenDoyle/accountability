@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101128181120) do
+ActiveRecord::Schema.define(:version => 20101128184453) do
 
   create_table "contests", :force => true do |t|
     t.integer  "region_id"
@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(:version => 20101128181120) do
     t.datetime "updated_at"
   end
 
-  create_table "organizations", :force => true do |t|
+  create_table "parties", :force => true do |t|
     t.string   "name"
     t.string   "url"
     t.datetime "created_at"

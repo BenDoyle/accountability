@@ -1,4 +1,4 @@
-class Organization < ActiveRecord::Base
+class Party < ActiveRecord::Base
   has_many :memberships
   has_many :people, :through => :memberships
   has_many :roles, :through => :memberships

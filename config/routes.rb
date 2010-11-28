@@ -1,12 +1,12 @@
 Roundup::Application.routes.draw do
   
+  resources :parties
+
   resources :polls
 
   resources :roles
 
   resources :memberships
-
-  resources :organizations
 
   resources :contests
 
