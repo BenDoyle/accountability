@@ -1,5 +1,9 @@
 NOTES AND TODO
 
+* Fix up roles <=> parties accoication, currently makes no sense (can have multiple roles over time within a party). 
+Maybe just need to have a seperate party_membership entry per role? Then we need logic to resolve which role to use 
+(think leader/member...)
+
 * Write scraper for Ontario Legislative Assembly data
 
 * Add Person <=> Vote    <=> Debate
