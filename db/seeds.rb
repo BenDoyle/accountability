@@ -79,16 +79,22 @@ l_mem = PartyMembership.new
 l_mem.person = dalton
 l_mem.role = leader
 l_mem.party = lib
+l_mem.start_date = '1990-09-06'
+l_mem.end_date = nil
 l_mem.save
 
 c_mem = PartyMembership.new
 c_mem.person = tim
 c_mem.role = leader
 c_mem.party = con
+l_mem.start_date = '1995-04-28'
+l_mem.end_date = nil
 c_mem.save
 
 c_mem2 = PartyMembership.new
 c_mem2.person = richard
 c_mem2.role = member
 c_mem2.party = con
+l_mem.start_date = nil
+l_mem.end_date = nil
 c_mem2.save
