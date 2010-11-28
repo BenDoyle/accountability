@@ -4,6 +4,7 @@ class CreateContests < ActiveRecord::Migration
       t.integer 'person_id'
       t.integer 'region_id'
       t.date    'contest_date'
+      t.integer 'votes'
       t.timestamps
     end
   end

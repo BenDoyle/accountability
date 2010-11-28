@@ -4,7 +4,7 @@ class CreateRegions < ActiveRecord::Migration
       t.string 'name'
       t.string 'url'
       t.date   'date_created'
-      t.date   'date_dissolved'
+      t.date   'date_destroyed'
       t.timestamps
     end
   end

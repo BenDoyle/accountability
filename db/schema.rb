@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(:version => 20101128142005) do
     t.integer  "person_id"
     t.integer  "region_id"
     t.date     "contest_date"
+    t.integer  "votes"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -55,7 +56,7 @@ ActiveRecord::Schema.define(:version => 20101128142005) do
     t.string   "name"
     t.string   "url"
     t.date     "date_created"
-    t.date     "date_dissolved"
+    t.date     "date_destroyed"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
