@@ -1,0 +1,21 @@
+<h1><%= link_to @contest.region.name, @contest.region %>, <%= @contest.contest_date %></h1> 
+
+<table>
+  <tr>
+    <th>Organization</th>
+    <th>Person</th>
+    <th>Votes</th>
+  </tr>
+ 
+<% @people do |person| %>
+  <tr>
+    <td><%= link_to person.current_organization.name, person.current_organization %></td>
+    <td><%= link_to person.name, person %></td>
+    <td><%= link_to person.name, person %></td>
+  </tr>
+<% end %>
+</table>
+ 
+<br />
+
+<%= link_to 'Home', :controller => 'home', :action => 'index' %>

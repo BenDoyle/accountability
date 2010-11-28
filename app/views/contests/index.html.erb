@@ -1,0 +1,22 @@
+<h1>All Contests</h1>
+ 
+<table>
+  <tr>
+    <th>Region</th>
+    <th>Date</th>
+    <th></th>
+  </tr>
+ 
+<% @contests.each do |contest| %>
+  <tr>
+    <td><%= link_to contest.region.name, contest.region %></td>
+    <td><%= contest.date %></td>
+    <td><%= link_to 'info', contest %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Home', :controller => 'home', :action => 'index' %>
+
