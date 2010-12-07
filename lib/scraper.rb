@@ -16,10 +16,12 @@ email     = candidate.children[3].children[1].children[0].text
 
 def get_text(node)
   if node.class == Nokogiri::XML::Text
-    return node.text
+    node.text
   else
-    return node.children.map{|n|get_text(n)}.join("")
+    node.children.map{|n|get_text(n)}.join(" ")
   end
 end
 
-300.times{|e| puts get_text(pr.children[11].children[3].children[3].children[e]).gsub!("\n"," ").gsub!(/[ ]+/,' ') }
+candidates = pr.children[11].children[3].children[3].children.map{|e| get_text(e).gsub("\n"," ").gsub(/[ ]+/,' ').gsub('--',' ').gsub('Hon',' ').strip }
+
+candidates.delete("")
