@@ -1,0 +1,63 @@
+require 'mpp_data_modules.rb'
+
+grammar MppData 
+
+
+  rule ministry
+    'Ministry' sentence postal_code
+  end
+
+  rule sentence
+    (word / number / punctuation )+ 
+  end
+
+  rule word
+    space* [a-zA-Z]+ space*
+  end
+  
+  rule number
+    space* [0-9]+ space*
+  end
+
+  rule punctuation
+    space* [,.] space* 
+  end
+
+  rule postal_code
+    [a-zA-Z] [0-9] [a-zA-Z] space? [0-9] [a-zA-Z] [0-9]
+  end
+
+
+
+  
+  
+  
+    
+  
+  rule data_element
+    telephone / fax / postal_code / email / ministry
+  end
+  
+  
+  rule telephone
+    'Tel' space tele_digits 
+  end
+
+  rule fax
+    'Fax' space tele_digits 
+  end
+  
+  rule email
+    [a-z0-9.]+ '@' [a-z0-9.]+
+  end
+
+  
+  rule tele_digits 
+    ac:( [0-9] 3..3 ) '-' tr:( [0-9] 3..3 ) '-' di:( [0-9] 4..4 )  <TeleDigits>
+  end
+
+  rule space
+    ' '
+  end
+  
+end
